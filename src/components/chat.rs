@@ -93,8 +93,7 @@ impl Component for Chat {
                             .map(|u| UserProfile {
                                 name: u.into(),
                                 avatar: format!(
-                                    "https://avatars.dicebear.com/api/adventurer-neutral/{}.svg",
-                                    u
+                                    "https://i.pinimg.com/564x/7d/22/bc/7d22bca4fcff6c104d3b8b9ae8a1c611.jpg",
                                 )
                                 .into(),
                             })
@@ -139,8 +138,8 @@ impl Component for Chat {
         let submit = ctx.link().callback(|_| Msg::SubmitMessage);
 
         html! {
-            <div class="flex w-screen">
-                <div class="flex-none w-56 h-screen bg-gray-100">
+            <div class="flex w-screen" style="background-image: url('https://wallpapercave.com/wp/wp4705116.jpg'); background-size: cover; background-repeat: no-repeat;">
+                <div class="flex-none w-56 h-screen bg-gray-100" style="background-color: #ccc">
                     <div class="text-xl p-3">{"Users"}</div>
                     {
                         self.users.clone().iter().map(|u| {
@@ -163,7 +162,7 @@ impl Component for Chat {
                     }
                 </div>
                 <div class="grow h-screen flex flex-col">
-                    <div class="w-full h-14 border-b-2 border-gray-300"><div class="text-xl p-3">{"💬 Chat!"}</div></div>
+                    <div class="w-full h-14 border-b-2 border-gray-300" style="background-color: #ccc;"><div class="text-xl p-3">{"💬 Chat!"}</div></div>
                     <div class="w-full grow overflow-auto border-b-2 border-gray-300">
                         {
                             self.messages.iter().map(|m| {
